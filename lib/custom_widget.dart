@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttest/diceroll.dart';
+
 
 //Widgets:
 //    CustomGradient
@@ -10,30 +12,23 @@ const  Alignment endAlignment=Alignment.bottomRight;
 
 
 class CustomGradient extends StatelessWidget{
-  const  CustomGradient(this.color1, this.color2, {super.key});
-   CustomGradient.purple({super.key})
-  : color1 = Color.fromARGB(255, 26, 2, 80),color2 = Color.fromARGB(255, 45, 7, 98);
+   const CustomGradient(this.color1, this.color2, {super.key});
+   const CustomGradient.purple({super.key})
+  : color1 = const Color.fromARGB(255, 26, 2, 80),color2 = const Color.fromARGB(255, 45, 7, 98);
+  CustomGradient.cyan({super.key})
+  : color1 = Colors.cyan, color2 = Colors.cyan.shade900;
   final Color color1;
   final Color color2;
+  
   @override
   Widget build(context) {
     return Container(
-      decoration: const  BoxDecoration(
+      decoration:   BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color.fromARGB(255, 26, 2, 80), Color.fromARGB(255, 45, 7, 98)],
+          colors: [ color1 , color2],
           begin: beginAlignment,
           end: endAlignment)),
-      child:  Center(
-        child:  Column(children: [
-          SizedBox(height: 10,),
-          //Text("Hello Welcome! ",style: TextStyle(fontSize: 28, color: Colors.white),),
-          Ctext(text: "L4FeeR !",fsize: 28,),
-          SizedBox(height: 100,),
-          Ctext(text: "Learning this flutter to create an app!",fsize: 22),
-          Image.asset("assets/dice-1.png"),
-        ],
-        ),
-      ),
+      child:  const RollDice()
       );
   }
   }
