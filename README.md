@@ -5,6 +5,6 @@
 **Here the first successfull dice roller app!**
 ![Video](test1.webm)
 
-click raw to dwonlaod the video :)
+click view raw to download the video :)
  
 ## Lemme continue this learning curve to reach its peak! :)
